@@ -1,0 +1,12 @@
+.*.swp
+.env
+vendor/*
+__pycache__/
+embeddings/*
+!embeddings/.gitkeep
+ivod-data/*
+!ivod-data/.gitkeep
+ivod-video/*
+!ivod-video/.gitkeep
+logs/*
+!logs/.gitkeep

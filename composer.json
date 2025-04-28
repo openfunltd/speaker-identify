@@ -1,0 +1,24 @@
+{
+    "name": "srwang/speaker-identify",
+    "autoload": {
+        "psr-4": {
+            "Srwang\\SpeakerIdentify\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ronny Wang",
+            "email": "ronnywang@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/openfunltd/ly-tc-toolkit.git"
+        }
+    ],
+    "require": {
+        "jfcherng/php-diff": "^6.16",
+        "openfunltd/ly-tc-toolkit": "dev-main"
+    }
+}
