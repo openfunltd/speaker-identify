@@ -56,13 +56,22 @@ pyannote 等工具只能區分發言者（spearker1, speaker2 ... ），這邊�
 ```
 
 ### 建立 embeddings 資料庫
+```
 > build_embeddings_db.php
+```
 
 ### ASR API
 ```
+# clone whisper-api repository
 > git clone git@github.com:openfunltd/whisper-api.git; cd whisper-api
-> PORT=31500 python whisper-server.py  # 跑一個 whisper server，PORT 請自行更改；需先安裝 whisper/whisperx/pyannote
-> php -S localhost:31600  # 或是用 nginx/apache，一樣自己把 port 改掉
+
+# 跑一個 whisper server，PORT 請自行更改；需先安裝 whisper/whisperx/pyannote
+> PORT=31500 python whisper-server.py
+
+# 跑 web server，也可以用 nginx/apache，一樣自己把 port 改掉
+> php -S localhost:31600
+
+# 打 asr api
 > curl http://localhost:31600/asr.php?url={音檔網址}&model={whisper模型}
 ```
 > 如果沒辦法或不想使用 `openfunltd/whisper-api`，可以寫一個 class extends `Asr`，然後覆寫 `getWhisperxResult()` 及 `getPyannoteResult()`。
