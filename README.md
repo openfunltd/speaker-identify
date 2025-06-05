@@ -55,7 +55,7 @@ pyannote 等工具只能區分發言者（spearker1, speaker2 ... ），這邊�
 > composer require jfcherng/php-diff
 ```
 
-### 建立 embeddings 資料庫
+### 建立 embeddings 資料庫至檔案系統
 ```
 > build_embeddings_db.php
 ```
@@ -75,6 +75,17 @@ pyannote 等工具只能區分發言者（spearker1, speaker2 ... ），這邊�
 > curl http://localhost:31600/asr.php?url={音檔網址}&model={whisper模型}
 ```
 > 如果沒辦法或不想使用 `openfunltd/whisper-api`，可以寫一個 class extends `Asr`，然後覆寫 `getWhisperxResult()` 及 `getPyannoteResult()`。
+
+### 建立 Elasticsearch 資料庫
+建立 `embeddings` index，並將檔案系統中的 embeddings 資料庫匯入到 Elasticsearch：
+```
+> build_es_db.php
+```
+es 的 host 設定在 `.env` 中。
+
+### TODO
+- 資料庫改用 Elasticsearch
+- 建立新資料匯入的 pipeline (pyannote + whisper -> embeddings -> Elasticsearch)
 
 ## 問題與解答
 - whisper 無人講話時會有「请不吝点赞 订阅 转发 打赏支持明镜与点点栏目」之類的腦補

@@ -19,6 +19,12 @@
     ],
     "require": {
         "jfcherng/php-diff": "^6.16",
-        "openfunltd/ly-tc-toolkit": "dev-main"
+        "openfunltd/ly-tc-toolkit": "dev-main",
+        "elasticsearch/elasticsearch": "8.17.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     }
 }
